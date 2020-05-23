@@ -81,6 +81,17 @@ int indexOfM(int m, int elems[], size_t size)
     return idxOfM;
 }
 
+float fun2()
+{
+    float x = 0.0f;
+
+    //while (x != 1.0f) {
+    while (x < 1.0f) {
+        x += 0.1f;
+    }
+    return x;
+}
+
 int main()
 {
     using namespace std;
@@ -107,6 +118,8 @@ int main()
         cout << "indexOfM(" << i << ", [0,1,2,3,4], 5) = "
         << indexOfM(i, a1, a1Size) << endl;
     }
+
+    cout << "fun2() result is " << fun2() << endl;
 
     return 0;
 }
