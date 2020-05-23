@@ -24,5 +24,11 @@ int main()
     cout << "sizeof(x6) = " << sizeof(x6) << endl;
     cout << "sizeof(x7) = " << sizeof(x7) << endl;
 
+    const int i = 3;
+    auto j = i; // j is not a constant
+
+    cout << "sizeof(i) = " << sizeof(i) << endl;
+    cout << "sizeof(j) = " << sizeof(j) << endl;
+
     return 0;
 }
