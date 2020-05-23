@@ -97,6 +97,11 @@ float meanOfA(int elems[], size_t size) {
     return sum / size;
 }
 
+float meanOfV(const vector<int> &elems) {
+    int sum = sum4(elems);
+    return sum / elems.size();
+}
+
 int main()
 {
     using namespace std;
@@ -127,6 +132,7 @@ int main()
     cout << "fun2() result is " << fun2() << endl;
 
     cout << "meanOfA(a1, a1Size) = " << meanOfA(a1, a1Size) << endl;
+    cout << "meanOfV(v1) = " << meanOfV(v1) << endl;
 
     return 0;
 }
