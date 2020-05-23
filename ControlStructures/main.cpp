@@ -18,8 +18,14 @@ void fun1()
     }
 }
 
+int absInt(int x)
+{
+    return (x >= 0) ? x : -x;
+}
+
 int main()
 {
     fun1();
+    cout << "absInt(-3) = " << absInt(-3) << endl;
     return 0;
 }
