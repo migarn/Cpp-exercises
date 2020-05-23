@@ -21,6 +21,21 @@ int fibR(int n)
     else { return fibR(n - 2) + fibR(n - 1); }
 }
 
+long factI(int n)
+{
+    if (n <= 1) { return 1; }
+    else {
+        long product = 1;
+        int i = n;
+
+        while (i > 1) {
+            product *= i;
+            i--;
+        }
+        return product;
+    }
+}
+
 int main()
 {
     using std::cout;
@@ -31,6 +46,7 @@ int main()
     constexpr size_t a1Size = sizeof(a1) / sizeof(a1[0]);
 
     cout << "factR(20) = " << factR(20) << endl;
+    cout << "factI(20) = " << factI(20) << endl;
     cout << "sum5(10) = " << sum5(a1, a1Size) << endl;
 
     high_resolution_clock::time_point start, end;
