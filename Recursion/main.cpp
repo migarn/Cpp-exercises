@@ -2,6 +2,8 @@
 #include <vector>
 #include <chrono>
 
+using std::vector;
+
 int sum5(int elems[], size_t size)
 {
     if (size == 0) { return 0; }
@@ -52,6 +54,17 @@ int fibI(int n)
     }
 }
 
+int maxEl(const vector<int> &elems)
+{
+    if (elems.size() == 1) {
+        return elems[0];
+    } else {
+        vector<int> trimmed = elems;
+        trimmed.pop_back();
+        return (elems.back() > maxEl(trimmed)) ? elems.back() : maxEl(trimmed);
+    }
+}
+
 int main()
 {
     using std::cout;
@@ -85,6 +98,9 @@ int main()
         << rDuration << " seconds." << endl;
     cout << "fibI(" << n4Fib << ") took "
         << iDuration << " seconds." << endl;
+
+    vector<int> numbers = {1, 9, 34, 4, 6, 24, 0, 10};
+    cout << "maxEl({1, 9, 34, 4, 6, 24, 0, 10}) = " << maxEl(numbers) << endl;
 
     return 0;
 }
