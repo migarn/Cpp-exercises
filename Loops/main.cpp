@@ -141,6 +141,20 @@ int sumOddsOfA(int elems[], size_t size)
     return sum;
 }
 
+float sumOddsOfV(const vector<int> &elems)
+{
+    int sum = 0;
+
+    for (auto e : elems) {
+        if (e % 2 == 0) {
+            continue;
+        }
+        sum += e;
+    }
+
+    return sum;
+}
+
 int main()
 {
     using namespace std;
@@ -175,6 +189,7 @@ int main()
     cout << "stdOfA(a1, a1Size) = " << stdOfA(a1, a1Size) << endl;
     cout << "stdOfV(v1) = " << stdOfV(v1) << endl;
     cout << "sumOddsOfA of a1 = [0,1,2,3,4] = " << sumOddsOfA(a1, a1Size) << endl;
+    cout << "sumOddsOfA of v1 = [0,1,2,3,4] = " << sumOddsOfV(v1) << endl;
 
     return 0;
 }
