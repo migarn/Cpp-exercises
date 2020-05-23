@@ -40,10 +40,25 @@ void switchDemo(char c)
     }
 }
 
+void switchDemo2(char c)
+{
+    switch (c) {
+        case 'y':
+            cout << "'y' matched" << endl;
+        case 'n':
+            cout << "'n' matched" << endl;
+        case 'c':
+            cout << "'c' matched" << endl;
+        default:
+            cout << "Default case, please select 'y', 'n' or 'c'" << endl;
+    }
+}
+
 int main()
 {
     fun1();
-    switchDemo('c');
+    switchDemo('y');
+    switchDemo2('y');
     cout << "absInt(-3) = " << absInt(-3) << endl;
     return 0;
 }
