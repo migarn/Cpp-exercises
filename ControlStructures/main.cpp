@@ -23,9 +23,27 @@ int absInt(int x)
     return (x >= 0) ? x : -x;
 }
 
+void switchDemo(char c)
+{
+    switch (c) {
+        case 'y':
+            cout << "'y' matched" << endl;
+            break;
+        case 'n':
+            cout << "'n' matched" << endl;
+            break;
+        case 'c':
+            cout << "'c' matched" << endl;
+            break;
+        default:
+            cout << "Default case, please select 'y', 'n' or 'c'" << endl;
+    }
+}
+
 int main()
 {
     fun1();
+    switchDemo('c');
     cout << "absInt(-3) = " << absInt(-3) << endl;
     return 0;
 }
