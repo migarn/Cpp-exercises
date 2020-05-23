@@ -42,7 +42,7 @@ int main()
 
     cout << "fibR(" << n4Fib << ") took "
         << duration_cast<duration<double>>(end - start).count()
-        << " seconds.\n" << endl;
+        << " seconds." << endl;
 
     return 0;
 }
