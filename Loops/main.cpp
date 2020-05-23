@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using std::vector;
 
@@ -102,6 +103,18 @@ float meanOfV(const vector<int> &elems) {
     return sum / elems.size();
 }
 
+float stdOfA(int elems[], size_t size)
+{
+    float mean = meanOfA(elems, size);
+    float sum = 0;
+
+    for (size_t i = 0; i < size; ++i) {
+        sum += (elems[i] - mean) * (elems[i] - mean);
+    }
+
+    return sqrt(sum / size);
+}
+
 int main()
 {
     using namespace std;
@@ -133,6 +146,7 @@ int main()
 
     cout << "meanOfA(a1, a1Size) = " << meanOfA(a1, a1Size) << endl;
     cout << "meanOfV(v1) = " << meanOfV(v1) << endl;
+    cout << "stdOfA(a1, a1Size) = " << stdOfA(a1, a1Size) << endl;
 
     return 0;
 }
