@@ -26,9 +26,11 @@ int main()
 
     const int i = 3;
     auto j = i; // j is not a constant
+    const double k = 3.0;
 
     cout << "sizeof(i) = " << sizeof(i) << endl;
     cout << "sizeof(j) = " << sizeof(j) << endl;
+    cout << "sizeof(k) = " << sizeof(k) << endl;
 
     return 0;
 }
