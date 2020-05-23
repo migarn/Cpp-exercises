@@ -36,6 +36,22 @@ long factI(int n)
     }
 }
 
+int fibI(int n)
+{
+    if (n <= 0) { return 0; }
+    else {
+        int fibSequence[n + 1];
+        fibSequence[0] = 0;
+        fibSequence[1] = 1;
+
+        for (int i = 2; i < n + 1; i++) {
+            fibSequence[i] = fibSequence[i - 1] + fibSequence[i - 2];
+        }
+
+        return fibSequence[n];
+    }
+}
+
 int main()
 {
     using std::cout;
@@ -53,12 +69,22 @@ int main()
 
     int n4Fib = 45;
     start = high_resolution_clock::now();
-    fibR(n4Fib);
+    int fibRResult = fibR(n4Fib);
     end = high_resolution_clock::now();
+    int rDuration = duration_cast<duration<double>>(end - start).count();
+
+    start = high_resolution_clock::now();
+    int fibIResult = fibI(n4Fib);
+    end = high_resolution_clock::now();
+    int iDuration = duration_cast<duration<double>>(end - start).count();
+
+    cout << "fibR(" << n4Fib << ") = " << fibRResult << endl;
+    cout << "fibI(" << n4Fib << ") = " << fibIResult << endl;
 
     cout << "fibR(" << n4Fib << ") took "
-        << duration_cast<duration<double>>(end - start).count()
-        << " seconds." << endl;
+        << rDuration << " seconds." << endl;
+    cout << "fibI(" << n4Fib << ") took "
+        << iDuration << " seconds." << endl;
 
     return 0;
 }
