@@ -34,8 +34,25 @@ void pointersDemo1()
     //int *p4 = &cexpr;
 }
 
+void referencesDemo()
+{
+    double x = 2.71;
+    double &rx = x;
+    //double &ry;
+    printf("x = %f\n", x);
+    printf("rx = %f\n", rx);
+
+    double *px = &x;
+    double *& rpx = px;
+    printf("&x = %p = %p\n", &x, px);
+    printf("rpx = %p\n", rpx);
+
+    //double &* prx = &rx;
+}
+
 int main()
 {
     pointersDemo1();
+    referencesDemo();
     return 0;
 }
