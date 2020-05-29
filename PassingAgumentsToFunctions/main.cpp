@@ -30,6 +30,13 @@ void swap2Ints(int *px, int *py)
     *py = tempX;
 }
 
+void swap2(int *px, int *py)
+{
+   int *tmp = px;
+   px = py;
+   py = tmp;
+}
+
 int main()
 {
     using std::cout;
@@ -57,6 +64,10 @@ int main()
     cout << "Calling swap2Ints(int *px, int *py):" << endl;
     cout << "x = " << x << ", y = " << y << endl;
     swap2Ints(&x, &y);
+    cout << "x = " << x << ", y = " << y << endl;
+
+    cout << "x = " << x << ", y = " << y << endl;
+    swap2(&x, &y);
     cout << "x = " << x << ", y = " << y << endl;
 
     return 0;
