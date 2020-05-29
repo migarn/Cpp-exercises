@@ -3,7 +3,7 @@
 void pointersDemo1()
 {
     int x = 1;
-    int *p1 = $x;
+    int *p1 = &x;
     int **pp1 = &p1;
 
     printf("&x = %p, x = %d\n", &x, x);
@@ -25,7 +25,7 @@ void pointersDemo1()
     const int *p2 = &y;
     printf("*p2 = %d\n", *p2);
 
-    const int * const p3 = &x
+    const int * const p3 = &x;
     //int *p2 = &y;
     printf("*p3 = %d\n", *p3);
     //p3 = &y;
