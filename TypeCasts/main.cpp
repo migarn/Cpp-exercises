@@ -22,8 +22,25 @@ void castDemo1()
     printf("y = %d, *p2 = %d\n", y, *p2);
 }
 
+void castDemo2()
+{
+    unsigned int a[] = { 0x01234567, 0x89ABCDEF };
+    unsigned char *pc = reinterpret_cast<unsigned char*>(a);
+    unsigned short *ps = reinterpret_cast<unsigned short*>(a);
+    unsigned int *pi = reinterpret_cast<unsigned int*>(a);
+    unsigned long *pl = reinterpret_cast<unsigned long*>(a);
+
+    for (int i = 0; i < 2; ++i) {
+       printf("pc[%i] = %X\n", i, pc[i]);
+       printf("ps[%i] = %X\n", i, ps[i]);
+       printf("pi[%i] = %X\n", i, pi[i]);
+       printf("pl[%i] = %lX\n", i, pl[i]);
+   }
+}
+
 int main()
 {
     castDemo1();
+    castDemo2();
     return 0;
 }
