@@ -22,6 +22,14 @@ int add(int *px, int *py)
    return *px + *py;
 }
 
+void swap2Ints(int *px, int *py)
+{
+    int tempX = *px;
+    int tempY = *py;
+    *px = tempY;
+    *py = tempX;
+}
+
 int main()
 {
     using std::cout;
@@ -42,9 +50,14 @@ int main()
     y = argByPointer(&x);
     cout << "x = " << x << ", y = " << y << endl;
 
-        cout << "Calling add(int *px, int *py):" << endl;
+    cout << "Calling add(int *px, int *py):" << endl;
     int z = add(&x, &y);
-    cout << "x = " << x << ", y = " << y << ", z = " << z <<endl;
+    cout << "x = " << x << ", y = " << y << ", z = " << z << endl;
+
+    cout << "Calling swap2Ints(int *px, int *py):" << endl;
+    cout << "x = " << x << ", y = " << y << endl;
+    swap2Ints(&x, &y);
+    cout << "x = " << x << ", y = " << y << endl;
 
     return 0;
 }
