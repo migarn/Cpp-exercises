@@ -17,6 +17,11 @@ int argByPointer(int *p)
     return 5 * *p;
 }
 
+int add(int *px, int *py)
+{
+   return *px + *py;
+}
+
 int main()
 {
     using std::cout;
@@ -36,6 +41,10 @@ int main()
     cout << "Calling argByPointer(&x):" << endl;
     y = argByPointer(&x);
     cout << "x = " << x << ", y = " << y << endl;
+
+        cout << "Calling add(int *px, int *py):" << endl;
+    int z = add(&x, &y);
+    cout << "x = " << x << ", y = " << y << ", z = " << z <<endl;
 
     return 0;
 }
