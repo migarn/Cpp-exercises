@@ -27,15 +27,15 @@ int main()
 
     cout << "Calling argByValue(x):" << endl;
     int y = argByValue(x);
-    cout << "x = " << x << "y = " << y << endl;
+    cout << "x = " << x << ", y = " << y << endl;
 
     cout << "Calling argByReference(x):" << endl;
     y = argByReference(x);
-    cout << "x = " << x << "y = " << y << endl;
+    cout << "x = " << x << ", y = " << y << endl;
 
-    cout << "Calling argByPointer(x):" << endl;
+    cout << "Calling argByPointer(&x):" << endl;
     y = argByPointer(&x);
-    cout << "x = " << x << "y = " << y << endl;
+    cout << "x = " << x << ", y = " << y << endl;
 
     return 0;
 }
