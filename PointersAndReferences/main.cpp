@@ -96,10 +96,70 @@ void pointersDemo2()
    }
 }
 
+int f1(int i) { return i; }
+int f2(int i) { return 10 * i; }
+int f3(int i) { return 100 * i; }
+
+double f4(char c)
+{
+   return (c == 'a') ? 3.14 : 2.71;
+}
+
+int* f5(double *x)
+{
+   int *res = new int;
+   *res = (*x > 0) ? -1 : 1;
+   return res;
+}
+
+int* f6(double *x)
+{
+   int *res = new int;
+   *res = (*x > 0) ? 10 : 0;
+   return res;
+}
+
+int* (*f7(double (*pf)(char), int *p1))(double *)
+{
+   double res1 = (*p1 > 0) ? pf('a') : pf('b');
+   if (res1 > 0) return f5;
+   else return f6;
+}
+
+void pointersDemo3()
+{
+   typedef int (*PInt_Fun_Int_T)(int);
+   PInt_Fun_Int_T fs[] = { f1, f2, f3 };
+
+   for (int i = 0; i < 3; ++i) {
+      printf("fs[%d](%d) = %d\n", i, i, fs[i](i));
+   }
+   printf("\n");
+
+   // Although, in C++, you cannot increment a pointer to a function
+   // you can increment a pointer to such a pointer
+   PInt_Fun_Int_T *pf = &fs[0]; // a pointer to a pointer to a function :)
+   for (int i = 0; i < 3; ++i) {
+      printf("pf(%d) = %d\n", i, (*pf)(i));
+      pf++;
+   }
+}
+
+void pointersDemo4()
+{
+   double x = 1;
+   //int* (*f7(double (*pf)(char), int *p1))(double *)
+   int* (*(*p7)(double(*)(char), int*)) (double*) = f7;
+   printf("*f7(f4,f6(&x))(&x) = %d\n", *f7(f4,f6(&x))(&x));
+   printf("*p7(f4,f6(&x))(&x) = %d\n", *p7(f4,f6(&x))(&x));
+}
+
 int main()
 {
     pointersDemo1();
     referencesDemo();
     pointersDemo2();
+    pointersDemo3();
+    pointersDemo4();
     return 0;
 }
