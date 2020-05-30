@@ -8,7 +8,7 @@ public:
     void pubFun1() {
         cout << "pubFun1()" << endl;
         pubField1++; protField2++; privField3;
-        protFund2(); privFun3;
+        protFun2(); privFun3();
     }
 
     int pubField1 = 1;
@@ -66,14 +66,14 @@ void gFriendFun1(ConcreteClassDemo& cCD)
 
 void gNonFriendFun2(ConcreteClassDemo& cCD)
 {
-    cour << "gNonFriendFun2()" << endl;
+    cout << "gNonFriendFun2()" << endl;
     cCD.pubField1++;
     //cCD.protField2++;
     //cCD.privField3++;
 
-    cCD.protFun2();
-    cCD.protFun2();
-    cCD.privFun3();
+    cCD.pubFun1();
+    //cCD.protFun2();
+    //cCD.privFun3();
 }
 
 int main()
