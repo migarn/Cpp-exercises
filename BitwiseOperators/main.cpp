@@ -31,7 +31,7 @@ void bitwiseOpsDemo2()
     constexpr auto sizeOfUInt = 8 * sizeof(unsigned int);
 
     cout << "x = " << bitset<sizeOfUInt>(x) << endl;
-    cout << "y = " << bitset<sizeOfUInt>(x) << endl;
+    cout << "y = " << bitset<sizeOfUInt>(y) << endl;
 
     cout << "x || y = " << bitset<sizeOfUInt>(x || y) << endl;
     cout << "x | y = " << bitset<sizeOfUInt>(x | y) << endl;
