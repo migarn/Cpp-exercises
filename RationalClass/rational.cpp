@@ -13,20 +13,21 @@ Rational::Rational(const Rational& copy) {
     initialize(copy.numer, copy.denom);
 }
 
-
 Rational& Rational::operator=(const Rational& other) {
     if (&other != this) {
-        this->numer = other.numer;
-        this->denom = other.denom;
-        this->gcdND = other.gcdND; // to do weryfikacji
+        //this->numer = other.numer;
+        //this->denom = other.denom;
+        //this->gcdND = other.gcdND; // to do weryfikacji
+        initialize(other.numer, other.denom);
     }
     return *this;
 }
 
 Rational& Rational::operator=(int i) {
-    this->numer = i;
-    this->denom = 1;
+    //this->numer = i;
+    //this->denom = 1;
     //this->gcdND = 1; // to do weryfikacji
+    initialize(i, 1);
     return *this;
 }
 
