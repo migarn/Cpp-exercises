@@ -1,7 +1,10 @@
 #include <iostream> // na końcu sprawdzic, czy trzeba powyższe
 #include "rational.h"
 
-Rational::Rational(int numerator, int denominator) : numer{numerator}, denom{denominator} {};
+//Rational::Rational(int numerator, int denominator) : numer{numerator}, denom{denominator} {};
+Rational::Rational(int numerator, int denominator) {
+    initialize(numerator, denominator);
+}
 Rational::Rational(const Rational& copy) : numer{copy.numer}, denom{copy.denom} {};
 
 Rational& Rational::operator=(const Rational& other) {
@@ -19,7 +22,6 @@ Rational& Rational::operator=(int i) {
     //this->gcdND = 1; // to do weryfikacji
     return *this;
 }
-
 
 Rational Rational::normalize(const Rational& other) {
     //TODO
@@ -74,6 +76,8 @@ bool Rational::operator<(const Rational& other) const {
 }
 
 void Rational::initialize(int numerator, int denominator) {
+    this->numer = numerator;
+    this->denom = denominator;
     //TODO
 }
 
