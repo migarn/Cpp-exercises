@@ -1,0 +1,6 @@
+#ifndef RATIONAL_H_INCLUDED
+#define RATIONAL_H_INCLUDED
+
+
+
+#endif // RATIONAL_H_INCLUDED
