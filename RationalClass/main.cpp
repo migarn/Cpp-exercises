@@ -12,15 +12,25 @@ int main()
     Rational *number = new Rational(3,7);
     Rational *number2 = new Rational(3);
     Rational r8(5);
+    Rational r9(r8);
 
     Rational r2(2, 11), r3(1, -3), r5(18, 6);
 
+    Rational r89 = r3;
+
     cout << number->denominator() << endl;
     cout << number2->denominator() << endl;
+    cout << number2->numerator() << endl;
     cout << r2.denominator() << endl;
     cout << r3.denominator() << endl;
     cout << r5.denominator() << endl;
     cout << r8.denominator() << endl;
+    cout << r8.numerator() << endl;
+    cout << r9.numerator() << endl;
+    cout << r9.denominator() << endl;
+    cout << r89.numerator() << endl;
+    cout << r89.denominator() << endl;
+
     // Dlaczego raz '.', a innym razem ->?
 
 
