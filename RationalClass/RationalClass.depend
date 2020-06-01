@@ -5,3 +5,7 @@
 
 1591024095 /home/magdalena/CPP/RationalClass/rational.h
 
+1591024414 source:/home/magdalena/CPP/RationalClass/rational.cpp
+	<iostream>
+	"rational.h"
+
