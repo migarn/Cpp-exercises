@@ -30,6 +30,7 @@ private:
 
     friend Vector2D operator+(const Vector2D&, const Vector2D&);
     friend Vector2D operator-(const Vector2D&, const Vector2D&);
+    friend double operator*(const Vector2D&, const Vector2D&);
     friend ostream& operator<<(ostream&, const Vector2D&);
     friend istream& operator>>(istream&,Vector2D&);
 };
@@ -59,6 +60,10 @@ Vector2D operator-(const Vector2D &v1, const Vector2D &v2) {
     return Vector2D {v1.x_ -  v2.x_, v1.y_ - v2.y_};
 }
 
+double operator*(const Vector2D &v1, const Vector2D &v2) {
+    return v1.x_ * v2.x_ + v1.y_ * v2.y_;
+}
+
 int main()
 {
     Vector2D v1{1,2};
@@ -82,6 +87,10 @@ int main()
     cout << "About to execute Vector2D v6{v1 - v5}..." << endl;
     Vector2D v6{v1 - v5};
     cout << "v6 = " << v6 << ", |v6| = " << v6.length() << endl;
+
+    cout << "About to execute double d = v5 * v6;..." << endl;
+    double d = v5 * v6;
+    cout << "d = " << d << endl;
 
     delete pV;
     return 0;
