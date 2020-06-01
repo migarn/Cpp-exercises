@@ -13,16 +13,13 @@ Rational& Rational::operator=(const Rational& other) {
     return *this;
 }
 
-
-/*
 Rational& Rational::operator=(int i) {
-        this->numer = i;
-        this->denom = 1;
-        this->gcdND = 1; // to do weryfikacji
-    }
-    return this;
+    this->numer = i;
+    this->denom = 1;
+    //this->gcdND = 1; // to do weryfikacji
+    return *this;
 }
-*/
+
 
 Rational Rational::normalize(const Rational& other) {
     //TODO
