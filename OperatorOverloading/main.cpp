@@ -31,6 +31,8 @@ private:
     friend Vector2D operator+(const Vector2D&, const Vector2D&);
     friend Vector2D operator-(const Vector2D&, const Vector2D&);
     friend double operator*(const Vector2D&, const Vector2D&);
+    friend Vector2D operator*(const Vector2D&, double);
+    friend Vector2D operator*(double, const Vector2D&);
     friend ostream& operator<<(ostream&, const Vector2D&);
     friend istream& operator>>(istream&,Vector2D&);
 };
@@ -64,6 +66,14 @@ double operator*(const Vector2D &v1, const Vector2D &v2) {
     return v1.x_ * v2.x_ + v1.y_ * v2.y_;
 }
 
+Vector2D operator*(const Vector2D &v1, double d) {
+    return Vector2D {v1.x_ * d, v1.y_ * d};
+}
+
+Vector2D operator*(double d, const Vector2D &v1) {
+    return Vector2D {v1.x_ * d, v1.y_ * d};
+}
+
 int main()
 {
     Vector2D v1{1,2};
@@ -91,6 +101,14 @@ int main()
     cout << "About to execute double d = v5 * v6;..." << endl;
     double d = v5 * v6;
     cout << "d = " << d << endl;
+
+    cout << "About to execute Vector2D v7{v6 * d}..." << endl;
+    Vector2D v7{v6 * d};
+    cout << "v7 = " << v7 << ", |v7| = " << v7.length() << endl;
+
+    cout << "About to execute Vector2D v8{d * v6}..." << endl;
+    Vector2D v8{d * v6};
+    cout << "v8 = " << v8 << ", |v8| = " << v8.length() << endl;
 
     delete pV;
     return 0;
