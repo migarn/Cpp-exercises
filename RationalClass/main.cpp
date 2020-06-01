@@ -44,11 +44,16 @@ int main()
     cout << r0.denominator() << endl;
     //cout << r00.numerator() << endl;
     //cout << "mianownik dla 0,0: " << r00.denominator() << endl;
-    cout << "GCD dla 0: " << r0.gcd() << endl;
+    //cout << "GCD dla 0: " << r0.gcd() << endl;
     //cout << "GCD dla 0,0: " << r00.gcd() << endl;
-    cout << "GCD dla 0,7: " << r07.gcd() << endl;
-    cout << "GCD dla r66(27,-81): " << r66.gcd() << endl;
+    //cout << "GCD dla 0,7: " << r07.gcd() << endl;
+    //cout << "GCD dla r66(27,-81): " << r66.gcd() << endl;
     cout << "Licznik i mianownik r66(27,-81): " << r66.numerator() << ", " << r66.denominator() << endl;
+
+    // to jest niby statyczne więc powinno pójść
+    Rational rN = r66.normalized(27,-81);
+    cout << "Licznik i mianownik r66(27,-81): " << r66.numerator() << ", " << r66.denominator() << endl;
+    cout << "Licznik i mianownik rN = normalized(27,-81): " << rN.numerator() << ", " << rN.denominator() << endl;
 
 
 

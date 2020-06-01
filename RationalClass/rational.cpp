@@ -22,18 +22,29 @@ Rational& Rational::operator=(int i) {
 }
 
 Rational Rational::normalize(const Rational& other) {
-    //todo
+    return other.normalized(other.numerator(), other.denominator());
+}
+
+int calculateGcd(int a, int b) {
+    int c;
+    while (b != 0) {
+        c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
 }
 
 Rational Rational::normalized(int numerator, int denominator) {
-/*
-    Rational r = initialize(numerator, denominator);
+    int gcd = calculateGcd(numerator, denominator);
+
     if ((numerator >= 0 && denominator > 0) || (numerator < 0 && denominator < 0)) {
-        return initialize(rational.numer / rational.gcdND, rational.denom / rational.gcdND);
+        Rational r(numerator / gcd, numerator / gcd);
+        return r;
     } else {
-        return initialize(abs(rational.numer) * (-1) / rational.gcdND, abs(rational.denom) / rational.gcdND);
+        Rational r(abs(numerator) * (-1) / gcd, abs(denominator) / gcd);
+        return r;
     }
-    */
 }
 
 Rational Rational::operator+(const Rational& other) const {
@@ -80,16 +91,6 @@ bool Rational::operator<(const Rational& other) const {
     //TODO
 }
 
-int calculateGcd(int a, int b) {
-    int c;
-    while (b != 0) {
-        c = a % b;
-        a = b;
-        b = c;
-    }
-    return a;
-}
-
 void Rational::initialize(int numerator, int denominator) {
     this->numer = numerator;
     if (denominator == 0) {
@@ -99,23 +100,7 @@ void Rational::initialize(int numerator, int denominator) {
     }
 
     this->gcdND = calculateGcd(abs(numer), abs(denom));
-
-    /*
-    int absNum = abs(numer);
-    int absDen = abs(denom);
-    int res;
-
-    while (absDen != 0) {
-        res = absNum % absDen;
-        absNum = absDen;
-        absDen = res;
-    }
-
-    this->gcdND = absNum;
-    */
 }
-
-
 
 std::ostream& operator<<(std::ostream &, const Rational &) {
     //TODO
