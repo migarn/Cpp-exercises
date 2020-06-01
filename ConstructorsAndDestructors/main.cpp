@@ -18,7 +18,7 @@ public:
         this->y_ = other.y_;
     }
 
-    Vector2D& operator(const Vector2D &other) {
+    Vector2D& operator=(const Vector2D &other) {
         cout << "...copy operator= working...";
         if (&other != this) {
             this->x_ = other.x_;
