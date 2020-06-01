@@ -1,10 +1,6 @@
 #include <iostream> // na końcu sprawdzic, czy trzeba powyższe
 #include "rational.h"
 
-//Nieużywane konstruktory. Do wyrzucenia.
-//Rational::Rational(int numerator, int denominator) : numer{numerator}, denom{denominator} {};
-//Rational::Rational(const Rational& copy) : numer{copy.numer}, denom{copy.denom} {};
-
 Rational::Rational(int numerator, int denominator) {
     initialize(numerator, denominator);
 }
@@ -15,28 +11,22 @@ Rational::Rational(const Rational& copy) {
 
 Rational& Rational::operator=(const Rational& other) {
     if (&other != this) {
-        //this->numer = other.numer;
-        //this->denom = other.denom;
-        //this->gcdND = other.gcdND; // to do weryfikacji
         initialize(other.numer, other.denom);
     }
     return *this;
 }
 
 Rational& Rational::operator=(int i) {
-    //this->numer = i;
-    //this->denom = 1;
-    //this->gcdND = 1; // to do weryfikacji
     initialize(i, 1);
     return *this;
 }
 
 Rational Rational::normalize(const Rational& other) {
-    //TODO
+    //todo
 }
 
 Rational Rational::normalized(int numerator, int denominator) {
-    //TODO
+    //if (numerator >)
 }
 
 Rational Rational::operator+(const Rational& other) const {
@@ -85,10 +75,14 @@ bool Rational::operator<(const Rational& other) const {
 
 void Rational::initialize(int numerator, int denominator) {
     this->numer = numerator;
-    this->denom = denominator;
+    if (denominator == 0) {
+        this->denom = 1/0; //Forcing program to crash
+    } else {
+        this->denom = denominator;
+    }
 
-    int absNum = abs(numerator);
-    int absDen = abs(denominator);
+    int absNum = abs(numer);
+    int absDen = abs(denom);
     int res;
 
     while (absDen != 0) {

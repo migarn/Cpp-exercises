@@ -21,6 +21,9 @@ int main()
     Rational r56(24,12);
     Rational r66(27,-81);
     Rational r76(25,15);
+    Rational r0(0);
+    //Rational r00(0,0);
+    Rational r07(0,7);
 
 
     cout << number->denominator() << endl;
@@ -37,6 +40,16 @@ int main()
     cout << r89.denominator() << endl;
     cout << r500.numerator() << endl;
     cout << r500.denominator() << endl;
+    cout << r0.numerator() << endl;
+    cout << r0.denominator() << endl;
+    //cout << r00.numerator() << endl;
+    //cout << "mianownik dla 0,0: " << r00.denominator() << endl;
+    //cout << "GCD dla 0: " << r0.gcd() << endl;
+    //cout << "GCD dla 0,0: " << r00.gcd() << endl;
+    //cout << "GCD dla 0,7: " << r07.gcd() << endl;
+    //cout << "GCD dla r66(27,-81): " << r66.gcd() << endl;
+    cout << "Licznik i mianownik r66(27,-81): " << r66.numerator() << ", " << r66.denominator() << endl;
+
 
 
     // Dlaczego raz '.', a innym razem ->?
