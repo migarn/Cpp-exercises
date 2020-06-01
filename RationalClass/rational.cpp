@@ -71,3 +71,47 @@ bool Rational::operator>(const Rational& other) const {
 bool Rational::operator<(const Rational& other) const {
     //TODO
 }
+
+void Rational::initialize(int numerator, int denominator) {
+    //TODO
+}
+
+friend std::ostream& operator<<(std::ostream &, const Rational &) {
+    //TODO
+}
+
+friend std::istream& operator>>(std::istream &, Rational &) {
+    //TODO
+}
+
+Rational operator+(const Rational& r, int i) {
+    //TODO
+}
+
+Rational operator+(int i, const Rational& r) {
+    //TODO
+}
+
+Rational operator-(const Rational& r, int i) {
+    //TODO
+}
+
+Rational operator-(int i, const Rational& r) {
+    //TODO
+}
+
+Rational operator*(const Rational& r, int i) {
+    //TODO
+}
+
+Rational operator*(int i, const Rational& r) {
+    //TODO
+}
+
+Rational operator/(const Rational& r, int i) {
+    //TODO
+}
+
+Rational operator/(int i, const Rational& r) {
+    //TODO
+}
