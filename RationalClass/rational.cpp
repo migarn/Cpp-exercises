@@ -1,11 +1,18 @@
 #include <iostream> // na końcu sprawdzic, czy trzeba powyższe
 #include "rational.h"
 
+//Nieużywane konstruktory. Do wyrzucenia.
 //Rational::Rational(int numerator, int denominator) : numer{numerator}, denom{denominator} {};
+//Rational::Rational(const Rational& copy) : numer{copy.numer}, denom{copy.denom} {};
+
 Rational::Rational(int numerator, int denominator) {
     initialize(numerator, denominator);
 }
-Rational::Rational(const Rational& copy) : numer{copy.numer}, denom{copy.denom} {};
+
+Rational::Rational(const Rational& copy) {
+    initialize(copy.numer, copy.denom);
+}
+
 
 Rational& Rational::operator=(const Rational& other) {
     if (&other != this) {
