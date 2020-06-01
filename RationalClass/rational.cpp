@@ -11,3 +11,63 @@ Rational& Rational::operator=(const Rational& other) {
     }
     return this;
 }
+
+Rational& Rational::operator=(int i) {
+        this->numer = i;
+        this->denom = 1;
+        this->gcdND = 1; // to do weryfikacji
+    }
+    return this;
+}
+
+static Rational Rational::normalize(const Rational& other) {
+    //TODO
+}
+
+static Rational Rational::normalized(int numerator, int denominator) {
+    //TODO
+}
+
+Rational Rational::operator+(const Rational& other) const {
+    //TODO
+}
+
+Rational Rational::operator-(const Rational& other) const {
+    //TODO
+}
+
+Rational Rational::operator*(const Rational& other) const {
+    //TODO
+}
+
+Rational Rational::operator/(const Rational& other) const {
+    //TODO
+}
+
+Rational Rational::operator+() const {
+    //TODO
+}
+
+Rational Rational::operator-() const {
+    //TODO
+}
+
+bool Rational::operator==(const Rational& other) const {
+    //TODO
+}
+
+bool Rational::operator>=(const Rational& other) const {
+    //TODO
+}
+
+bool Rational::operator<=(const Rational& other) const {
+    //TODO
+}
+
+bool Rational::operator>(const Rational& other) const {
+    //TODO
+}
+
+bool Rational::operator<(const Rational& other) const {
+    //TODO
+}
