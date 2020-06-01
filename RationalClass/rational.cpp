@@ -1,8 +1,11 @@
 #include <iostream> // sprawdzic, czy trzeba powyższe
+#include "rational.h"
 
-Rational::Rational(int numerator, int denominator = 1) : numer{numerator}, denom{denominator} {};
+//Rational::Rational(int numerator, int denominator = 1) : numer{numerator}, denom{denominator} {};
+Rational::Rational(int numerator, int denominator) : numer{numerator}, denom{denominator} {};
 Rational::Rational(const Rational& copy) : numer{copy.numer}, denom{copy.denom} {};
 
+/*
 Rational& Rational::operator=(const Rational& other) {
     if (&other != this) {
         this->numer = other.numer;
@@ -11,7 +14,9 @@ Rational& Rational::operator=(const Rational& other) {
     }
     return this;
 }
+*/
 
+/*
 Rational& Rational::operator=(int i) {
         this->numer = i;
         this->denom = 1;
@@ -19,12 +24,13 @@ Rational& Rational::operator=(int i) {
     }
     return this;
 }
+*/
 
-static Rational Rational::normalize(const Rational& other) {
+Rational Rational::normalize(const Rational& other) {
     //TODO
 }
 
-static Rational Rational::normalized(int numerator, int denominator) {
+Rational Rational::normalized(int numerator, int denominator) {
     //TODO
 }
 
@@ -76,11 +82,11 @@ void Rational::initialize(int numerator, int denominator) {
     //TODO
 }
 
-friend std::ostream& operator<<(std::ostream &, const Rational &) {
+std::ostream& operator<<(std::ostream &, const Rational &) {
     //TODO
 }
 
-friend std::istream& operator>>(std::istream &, Rational &) {
+std::istream& operator>>(std::istream &, Rational &) {
     //TODO
 }
 

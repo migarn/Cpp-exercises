@@ -5,6 +5,8 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello world!" << endl;
+    int a = 1;
+    int b = 3;
+    Rational *number = new Rational(3,1);
     return 0;
 }
