@@ -18,6 +18,10 @@ int main()
 
     Rational r89 = r3;
     Rational r500 = 6;
+    Rational r56(24,12);
+    Rational r66(27,-81);
+    Rational r76(25,15);
+
 
     cout << number->denominator() << endl;
     cout << number2->denominator() << endl;
@@ -33,6 +37,7 @@ int main()
     cout << r89.denominator() << endl;
     cout << r500.numerator() << endl;
     cout << r500.denominator() << endl;
+
 
     // Dlaczego raz '.', a innym razem ->?
 

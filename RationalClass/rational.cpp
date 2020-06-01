@@ -86,7 +86,18 @@ bool Rational::operator<(const Rational& other) const {
 void Rational::initialize(int numerator, int denominator) {
     this->numer = numerator;
     this->denom = denominator;
-    //TODO
+
+    int absNum = abs(numerator);
+    int absDen = abs(denominator);
+    int res;
+
+    while (absDen != 0) {
+        res = absNum % absDen;
+        absNum = absDen;
+        absDen = res;
+    }
+
+    this->gcdND = absNum;
 }
 
 std::ostream& operator<<(std::ostream &, const Rational &) {
