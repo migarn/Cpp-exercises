@@ -29,7 +29,7 @@ private:
     double y_;
 
     friend Vector2D operator+(const Vector2D&, const Vector2D&);
-    friend ostream& operator<<(ostream&, const VEctor2D&);
+    friend ostream& operator<<(ostream&, const Vector2D&);
     friend istream& operator>>(istream&,Vector2D&);
 };
 
@@ -50,7 +50,7 @@ istream& operator>>(istream& is, Vector2D& v)
     return is;
 }
 
-Vector2D operator+(const Vector2D &v1, const Vector 2D &v2) {
+Vector2D operator+(const Vector2D &v1, const Vector2D &v2) {
     return Vector2D {v1.x_ +  v2.x_, v1.y_ + v2.y_};
 }
 
