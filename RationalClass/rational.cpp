@@ -95,11 +95,17 @@ bool Rational::operator<=(const Rational& other) const {
 }
 
 bool Rational::operator>(const Rational& other) const {
-    //TODO
+    Rational r1(this->numer * other.denom, this->denom * other.denom);
+    Rational r2(other.numer * this->denom, this->denom * other.denom);
+
+    return r1.denom > 0 ? r1.numer > r2.numer : r2.numer > r1.numer;
 }
 
 bool Rational::operator<(const Rational& other) const {
-    //TODO
+    Rational r1(this->numer * other.denom, this->denom * other.denom);
+    Rational r2(other.numer * this->denom, this->denom * other.denom);
+
+    return r1.denom > 0 ? r1.numer < r2.numer : r2.numer < r1.numer;
 }
 
 void Rational::initialize(int numerator, int denominator) {
@@ -111,7 +117,7 @@ void Rational::initialize(int numerator, int denominator) {
     }
 
     this->gcdND = calculateGcd(abs(numer), abs(denom));
-    //In my opinion 'gcdND' is unnecessary field as normalization is carried out by static function, where Rational is an attribute.
+    //In my opinion 'gcdND' is an unnecessary field as normalization is carried out by static function, where Rational is an attribute.
 }
 
 std::ostream& operator<<(std::ostream &, const Rational &) {

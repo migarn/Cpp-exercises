@@ -105,6 +105,16 @@ int main()
     bool le = rle1 <= rle2;
     cout << "rle1 <= rle2 = " << le << endl;
 
+    Rational rg1(19,-1);
+    Rational rg2(-40,2);
+    bool g = rg1 > rg2;
+    cout << "rg1 > rg2 = " << g << endl;
+
+    Rational rl1(20,1);
+    Rational rl2(39,2);
+    bool l = rl1 < rl2;
+    cout << "rl1 < rl2 = " << l << endl;
+
 
 
 
