@@ -51,7 +51,10 @@ int main()
     cout << "Licznik i mianownik r66(27,-81): " << r66.numerator() << ", " << r66.denominator() << endl;
 
     // to jest niby statyczne więc powinno pójść
-    Rational rN = r66.normalized(27,-81);
+    Rational rN = Rational::normalized(27,-81);
+
+    // TU zrobić
+    //Rational rN2 = Rational::normalized(r66);
     cout << "Licznik i mianownik r66(27,-81): " << r66.numerator() << ", " << r66.denominator() << endl;
     cout << "Licznik i mianownik rN = normalized(27,-81): " << rN.numerator() << ", " << rN.denominator() << endl;
 

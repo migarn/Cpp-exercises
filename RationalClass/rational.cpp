@@ -22,7 +22,7 @@ Rational& Rational::operator=(int i) {
 }
 
 Rational Rational::normalize(const Rational& other) {
-    return other.normalized(other.numerator(), other.denominator());
+    //return Rational::normalized(&other.numerator(), &other.denominator());
 }
 
 int calculateGcd(int a, int b) {
@@ -36,13 +36,15 @@ int calculateGcd(int a, int b) {
 }
 
 Rational Rational::normalized(int numerator, int denominator) {
-    int gcd = calculateGcd(numerator, denominator);
+    int absNum = abs(numerator);
+    int absDen = abs(denominator);
+    int gcd = calculateGcd(absNum, absDen);
 
     if ((numerator >= 0 && denominator > 0) || (numerator < 0 && denominator < 0)) {
-        Rational r(numerator / gcd, numerator / gcd);
+        Rational r(absNum / gcd, absDen / gcd);
         return r;
     } else {
-        Rational r(abs(numerator) * (-1) / gcd, abs(denominator) / gcd);
+        Rational r(absNum * (-1) / gcd, absDen / gcd);
         return r;
     }
 }
