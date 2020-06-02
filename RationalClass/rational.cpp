@@ -74,7 +74,10 @@ Rational Rational::operator-() const {
 }
 
 bool Rational::operator==(const Rational& other) const {
-    //TODO
+    Rational r1 = normalize(*this);
+    Rational r2 = normalize(other);
+
+    return (r1.numer == r2.numer && r1.denom == r2.denom);
 }
 
 bool Rational::operator>=(const Rational& other) const {

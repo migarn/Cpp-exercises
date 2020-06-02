@@ -90,6 +90,11 @@ int main()
     Rational rmm = -rm;
     cout << "Licznik i mianownik rmm = -rm: " << rmm.numerator() << ", " << rmm.denominator() << endl;
 
+    Rational re1(20,-8);
+    Rational re2(-10,4);
+    bool e = re1 == re2;
+    cout << "re1 == re2 = " << e << endl;
+
 
 
 
