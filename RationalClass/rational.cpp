@@ -66,11 +66,11 @@ Rational Rational::operator/(const Rational& other) const {
 }
 
 Rational Rational::operator+() const {
-    //TODO
+    return normalize(*this);
 }
 
 Rational Rational::operator-() const {
-    //TODO
+    return normalized(this->numer * (-1), this->denom);
 }
 
 bool Rational::operator==(const Rational& other) const {

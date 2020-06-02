@@ -82,6 +82,14 @@ int main()
     Rational rm3 = rm1 - rm2;
     cout << "Licznik i mianownik rm3 = rm1 - rm2: " << rm3.numerator() << ", " << rm3.denominator() << endl;
 
+    Rational rs(10,4);
+    Rational rss = +rs;
+    cout << "Licznik i mianownik rss = +rs: " << rss.numerator() << ", " << rss.denominator() << endl;
+
+    Rational rm(-10,4);
+    Rational rmm = -rm;
+    cout << "Licznik i mianownik rmm = -rm: " << rmm.numerator() << ", " << rmm.denominator() << endl;
+
 
 
 
