@@ -72,6 +72,11 @@ int main()
     Rational rd3 = rd1 / rd2;
     cout << "Licznik i mianownik rd3 = rd1 / rd2: " << rd3.numerator() << ", " << rd3.denominator() << endl;
 
+    Rational rs1(1,2);
+    Rational rs2(2,-4);
+    Rational rs3 = rs1 + rs2;
+    cout << "Licznik i mianownik rs3 = rs1 + rs2: " << rs3.numerator() << ", " << rs3.denominator() << endl;
+
 
 
 

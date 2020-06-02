@@ -50,7 +50,7 @@ Rational Rational::normalized(int numerator, int denominator) {
 }
 
 Rational Rational::operator+(const Rational& other) const {
-    //TODO
+    return normalized(this->numer * other.denom + other.numer * this->denom, this->denom * other.denom);
 }
 
 Rational Rational::operator-(const Rational& other) const {
