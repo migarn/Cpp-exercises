@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1591076933 source:/home/magdalena/CPP/RationalClass/main.cpp
+1591077008 source:/home/magdalena/CPP/RationalClass/main.cpp
 	<iostream>
 	"rational.h"
 
 1591074909 /home/magdalena/CPP/RationalClass/rational.h
 
-1591076956 source:/home/magdalena/CPP/RationalClass/rational.cpp
+1591077450 source:/home/magdalena/CPP/RationalClass/rational.cpp
 	<iostream>
 	"rational.h"
 

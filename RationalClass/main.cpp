@@ -59,6 +59,16 @@ int main()
     cout << "Licznik i mianownik rN = normalized(27,-81): " << rN.numerator() << ", " << rN.denominator() << endl;
     cout << "Licznik i mianownik rN2 = normalized(r66): " << rN2.numerator() << ", " << rN2.denominator() << endl;
 
+    Rational product = r66*rN;
+    cout << "Licznik i mianownik product = r66*rN: " << product.numerator() << ", " << product.denominator() << endl;
+
+    Rational rp1(2,56);
+    Rational rp2(43,-18);
+    Rational rp3 = rp1 * rp2;
+
+    cout << "Licznik i mianownik rp3 = rp1 * rp2: " << rp3.numerator() << ", " << rp3.denominator() << endl;
+
+
 
 
     // Dlaczego raz '.', a innym razem ->?

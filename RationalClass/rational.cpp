@@ -22,7 +22,6 @@ Rational& Rational::operator=(int i) {
 }
 
 Rational Rational::normalize(const Rational& other) {
-    //Rational r = ;
     return normalized(other.numer, other.denom);
 }
 
@@ -59,7 +58,7 @@ Rational Rational::operator-(const Rational& other) const {
 }
 
 Rational Rational::operator*(const Rational& other) const {
-    //TODO
+    return normalized(this->numer * other.numer, this->denom * other.denom);
 }
 
 Rational Rational::operator/(const Rational& other) const {
