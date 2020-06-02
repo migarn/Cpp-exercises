@@ -142,11 +142,12 @@ std::istream& operator>>(std::istream &is, Rational& r) {
 }
 
 Rational operator+(const Rational& r, int i) {
-    //TODO
+    Rational r2(i);
+    return r+r2;
 }
 
 Rational operator+(int i, const Rational& r) {
-    //TODO
+    return operator+(r, i);
 }
 
 Rational operator-(const Rational& r, int i) {
