@@ -81,7 +81,10 @@ bool Rational::operator==(const Rational& other) const {
 }
 
 bool Rational::operator>=(const Rational& other) const {
-    //TODO
+    Rational r1(this->numer * other.denom, this->denom * other.denom);
+    Rational r2(other.numer * this->denom, this->denom * other.denom);
+
+    return r1.denom > 0 ? r1.numer >= r2.numer : r2.numer >= r1.numer;
 }
 
 bool Rational::operator<=(const Rational& other) const {

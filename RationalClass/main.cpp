@@ -95,6 +95,11 @@ int main()
     bool e = re1 == re2;
     cout << "re1 == re2 = " << e << endl;
 
+    Rational rge1(20,-1);
+    Rational rge2(-40,2);
+    bool ge = rge1 >= rge2;
+    cout << "re1 >= re2 = " << ge << endl;
+
 
 
 
