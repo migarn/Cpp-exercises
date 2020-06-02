@@ -115,6 +115,9 @@ int main()
     bool l = rl1 < rl2;
     cout << "rl1 < rl2 = " << l << endl;
 
+    cout << r56 << endl;
+    cout << r66 << endl;
+
 
 
 

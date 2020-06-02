@@ -120,8 +120,14 @@ void Rational::initialize(int numerator, int denominator) {
     //In my opinion 'gcdND' is an unnecessary field as normalization is carried out by static function, where Rational is an attribute.
 }
 
-std::ostream& operator<<(std::ostream &, const Rational &) {
-    //TODO
+std::ostream& operator<<(std::ostream &os, const Rational& r) {
+    Rational zeroR(0);
+    if (r < zeroR) {
+        os << "(-" << abs(r.numer) << "/" << abs(r.denom) << ")";
+    } else {
+        os << r.numer << "/" << r.denom;
+    }
+    return os;
 }
 
 std::istream& operator>>(std::istream &, Rational &) {
