@@ -124,6 +124,12 @@ int main()
     cout << "1 + rz = " << 1 + rz << endl;
     cout << "rz - 1 = " << rz - 1 << endl;
     cout << "1 - rz = " << 1 - rz << endl;
+    cout << "rz * 2 = " << rz * 2 << endl;
+    cout << "2 * rz = " << 2 * rz << endl;
+    cout << "-2 * rz = " << -2 * rz << endl;
+    cout << "rz / 2 = " << rz / 2 << endl;
+    cout << "2 / rz = " << 2 / rz << endl;
+    cout << "-2 / rz = " << -2 / rz << endl;
 
     Rational r100(0);
     cin >> r100;
