@@ -62,7 +62,7 @@ Rational Rational::operator*(const Rational& other) const {
 }
 
 Rational Rational::operator/(const Rational& other) const {
-    //TODO
+    return normalized(this->numer * other.denom, this->denom * other.numer);
 }
 
 Rational Rational::operator+() const {
