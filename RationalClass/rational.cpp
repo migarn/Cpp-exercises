@@ -122,16 +122,23 @@ void Rational::initialize(int numerator, int denominator) {
 
 std::ostream& operator<<(std::ostream &os, const Rational& r) {
     Rational zeroR(0);
+
     if (r < zeroR) {
         os << "(-" << abs(r.numer) << "/" << abs(r.denom) << ")";
     } else {
-        os << r.numer << "/" << r.denom;
+        os << abs(r.numer) << "/" << abs(r.denom);
     }
     return os;
 }
 
-std::istream& operator>>(std::istream &, Rational &) {
-    //TODO
+std::istream& operator>>(std::istream &is, Rational& r) {
+    using std::cout;
+
+    cout << "numerator = ";
+    is >> r.numer;
+    cout << "denominator = ";
+    is >> r.denom;
+    return is;
 }
 
 Rational operator+(const Rational& r, int i) {

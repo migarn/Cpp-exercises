@@ -118,6 +118,10 @@ int main()
     cout << r56 << endl;
     cout << r66 << endl;
 
+    Rational r100(0);
+    cin >> r100;
+    cout << "r100 = " << r100 << endl;
+
 
 
 
