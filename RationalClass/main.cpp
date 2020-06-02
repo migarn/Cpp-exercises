@@ -118,10 +118,12 @@ int main()
     cout << r56 << endl;
     cout << r66 << endl;
 
-    Rational rz(3,-2);
+    Rational rz(3,2);
     cout << "rz = " << rz << endl;
-    cout << "rz + 1 = " << rz + 2 << endl;
-    cout << "1 + rz = " << 2 + rz << endl;
+    cout << "rz + 1 = " << rz + 1 << endl;
+    cout << "1 + rz = " << 1 + rz << endl;
+    cout << "rz - 1 = " << rz - 1 << endl;
+    cout << "1 - rz = " << 1 - rz << endl;
 
     Rational r100(0);
     cin >> r100;
