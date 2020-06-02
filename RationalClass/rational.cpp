@@ -22,7 +22,8 @@ Rational& Rational::operator=(int i) {
 }
 
 Rational Rational::normalize(const Rational& other) {
-    //return Rational::normalized(&other.numerator(), &other.denominator());
+    //Rational r = ;
+    return normalized(other.numer, other.denom);
 }
 
 int calculateGcd(int a, int b) {
@@ -102,6 +103,7 @@ void Rational::initialize(int numerator, int denominator) {
     }
 
     this->gcdND = calculateGcd(abs(numer), abs(denom));
+    //In my opinion 'gcdND' is unnecessary field as normalization is carried out by static function, where Rational is an attribute.
 }
 
 std::ostream& operator<<(std::ostream &, const Rational &) {
