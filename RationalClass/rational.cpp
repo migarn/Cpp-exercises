@@ -1,4 +1,4 @@
-#include <iostream> // na końcu sprawdzic, czy trzeba powyższe
+#include <iostream>
 #include "rational.h"
 
 Rational::Rational(int numerator, int denominator) {
@@ -117,7 +117,7 @@ void Rational::initialize(int numerator, int denominator) {
     }
 
     this->gcdND = calculateGcd(abs(numer), abs(denom));
-    //In my opinion 'gcdND' is an unnecessary field as normalization is carried out by static function, where Rational is an attribute.
+    //'gcdND' could be deleted as normalization is carried out by static function, where Rational is an attribute.
 }
 
 std::ostream& operator<<(std::ostream &os, const Rational& r) {

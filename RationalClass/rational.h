@@ -10,7 +10,6 @@ public:
 
     int numerator() const { return numer; }
     int denominator() const { return denom; }
-    //int gcd() const { return gcdND; } // wyrzucić
 
     static Rational normalize(const Rational& other);
     static Rational normalized(int numerator, int denominator);
